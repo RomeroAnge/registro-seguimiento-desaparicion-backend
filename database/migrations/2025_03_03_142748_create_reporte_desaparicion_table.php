@@ -1,5 +1,4 @@
 <?php
-// 6. Migration: CreateReporteDesaparicionTable
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,8 +13,11 @@ class CreateReporteDesaparicionTable extends Migration {
             $table->string('codigo_ubicacion'); // FK a ubicaciones.codigo_ubicacion
             $table->json('fotografias')->nullable();
             $table->string('estado_reporte'); // "Pendiente", "Validado", "Rechazado"
+            $table->string('codigo_usuario'); // FK a users.codigo_usuario (de rol Familiar)
             $table->timestamps();
+
             $table->foreign('codigo_ubicacion')->references('codigo_ubicacion')->on('ubicaciones')->onDelete('cascade');
+            $table->foreign('codigo_usuario')->references('codigo_usuario')->on('users')->onDelete('cascade');
         });
     }
     public function down() {

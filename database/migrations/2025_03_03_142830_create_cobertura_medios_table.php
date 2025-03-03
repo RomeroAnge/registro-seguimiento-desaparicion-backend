@@ -1,5 +1,4 @@
 <?php
-// 12. Migration: CreateCoberturaMediosTable
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -12,9 +11,9 @@ class CreateCoberturaMediosTable extends Migration {
             $table->text('nota');
             $table->string('redes_sociales');
             $table->timestamp('fecha_publicacion');
-            $table->unsignedBigInteger('caso_desaparecido_id');
+            $table->unsignedBigInteger('caso_desaparecidos_id');
             $table->timestamps();
-            $table->foreign('caso_desaparecido_id')->references('id')->on('caso_desaparecidos')->onDelete('cascade');
+            $table->foreign('caso_desaparecidos_id')->references('id')->on('caso_desaparecidos')->onDelete('cascade');
         });
     }
     public function down() {

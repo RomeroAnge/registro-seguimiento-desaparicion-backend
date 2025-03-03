@@ -1,5 +1,4 @@
 <?php
-// 14. Migration: CreateSeguimientoCasosTable
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -12,7 +11,7 @@ class CreateSeguimientoCasosTable extends Migration {
             $table->string('codigo_seguimiento')->unique();
             $table->timestamp('fecha_seguimiento');
             $table->text('observaciones');
-            $table->string('estado_actual');
+            $table->string('estado_actual'); // Estado del caso en el momento del seguimiento
             $table->unsignedBigInteger('caso_desaparecido_id');
             $table->timestamps();
             $table->foreign('caso_desaparecido_id')->references('id')->on('caso_desaparecidos')->onDelete('cascade');

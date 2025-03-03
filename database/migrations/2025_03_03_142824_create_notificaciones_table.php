@@ -1,5 +1,4 @@
 <?php
-// 11. Migration: CreateNotificacionesTable
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

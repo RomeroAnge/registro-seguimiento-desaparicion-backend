@@ -1,5 +1,4 @@
 <?php
-// 9. Migration: CreateRegistroAnalisisTable
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -12,7 +11,7 @@ class CreateRegistroAnalisisTable extends Migration {
             $table->timestamp('fecha_analisis');
             $table->string('resultado'); // "Aceptada", "Rechazada", "Pendiente"
             $table->text('observaciones')->nullable();
-            $table->unsignedBigInteger('informacion_adicional_id')->nullable();
+            $table->unsignedBigInteger('informacion_adicional_id');
             $table->timestamps();
             $table->foreign('informacion_adicional_id')->references('id')->on('informacion_adicional')->onDelete('cascade');
         });
