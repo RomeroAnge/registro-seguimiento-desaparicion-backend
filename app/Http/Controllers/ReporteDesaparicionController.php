@@ -24,7 +24,8 @@ class ReporteDesaparicionController extends Controller
     {
         $validatedData = $request->validate([
             'codigo_reporte'   => 'required|string|unique:reporte_desaparicion,codigo_reporte',
-            'datos_personales' => 'required|string',
+            'nombre'                => 'required|string|max:255',
+            'descripcion'           => 'required|string',
             'codigo_ubicacion' => 'required|string|exists:ubicaciones,codigo_ubicacion',
             'fotografias'      => 'nullable|string',
             // Si se desea validar cada elemento del arreglo, por ejemplo, que sea una URL:
@@ -68,7 +69,7 @@ class ReporteDesaparicionController extends Controller
                 'sometimes', 'required', 'string',
                 Rule::unique('reporte_desaparicion', 'codigo_reporte')->ignore($reporte->id),
             ],
-            'datos_personales' => 'sometimes|required|string',
+            
             'codigo_ubicacion' => 'sometimes|required|string|exists:ubicaciones,codigo_ubicacion',
             'fotografias'      => 'nullable|string',
             'estado_reporte'   => [

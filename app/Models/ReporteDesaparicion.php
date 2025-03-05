@@ -13,7 +13,8 @@ class ReporteDesaparicion extends Model
 
     protected $fillable = [
         'codigo_reporte',
-        'datos_personales',
+        'nombre',
+        'descripcion',
         'codigo_ubicacion',
         'fotografias',
         'estado_reporte',

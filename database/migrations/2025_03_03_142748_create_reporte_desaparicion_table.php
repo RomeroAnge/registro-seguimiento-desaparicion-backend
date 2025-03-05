@@ -9,7 +9,8 @@ class CreateReporteDesaparicionTable extends Migration {
         Schema::create('reporte_desaparicion', function (Blueprint $table) {
             $table->id();
             $table->string('codigo_reporte')->unique();
-            $table->text('datos_personales');
+            $table->string('nombre');
+            $table->text('descripcion');
             $table->string('codigo_ubicacion'); // FK a ubicaciones.codigo_ubicacion
             $table->json('fotografias')->nullable();
             $table->string('estado_reporte'); // "Pendiente", "Validado", "Rechazado"
