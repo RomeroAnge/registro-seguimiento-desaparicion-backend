@@ -59,7 +59,7 @@ class UserSeeder extends Seeder
 
         // --- Insert 3 familiares ---
         DB::table('users')->insert([
-            'codigo_usuario' => 'FAM' . strtoupper(Str::random(5)),
+            'codigo_usuario' => 'FAM-123',
             'nombre'         => 'Alice Brown',
             'email'          => 'alice.brown@example.com',
             'password'       => bcrypt('secret'),
